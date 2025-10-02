@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_igrendients",
+  "info": {
+    "displayName": "Recipe Ingrendient",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "cm",
+        "gram",
+        "ml",
+        "pcs"
+      ]
+    },
+    "Amount": {
+      "type": "component",
+      "component": "shared.amount",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

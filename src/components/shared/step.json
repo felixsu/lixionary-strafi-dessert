@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_steps",
+  "info": {
+    "displayName": "Recipe Step",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "stage": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "duration": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

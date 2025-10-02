@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_amounts",
+  "info": {
+    "displayName": "Recipe Amount",
+    "icon": "sun"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "decimal"
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "less",
+        "normal",
+        "more"
+      ]
+    }
+  },
+  "config": {}
+}

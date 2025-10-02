@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_tools",
+  "info": {
+    "displayName": "Recipe Tool",
+    "icon": "restaurant"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
