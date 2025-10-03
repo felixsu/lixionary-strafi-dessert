@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "display_windows",
+  "info": {
+    "singularName": "display-window",
+    "pluralName": "display-windows",
+    "displayName": "Display Window"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "display_main": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "display_alternatives": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "prices": {
+      "type": "component",
+      "component": "general.price",
+      "repeatable": true
+    },
+    "physical_informations": {
+      "type": "component",
+      "component": "general.physical-information",
+      "repeatable": true
+    },
+    "is_available": {
+      "type": "boolean"
+    },
+    "recipe": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recipe.recipe",
+      "inversedBy": "display_windows"
+    }
+  }
+}

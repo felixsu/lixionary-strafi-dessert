@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_shared_tools",
+  "collectionName": "components_recipe_equipment",
   "info": {
-    "displayName": "Recipe Tool",
-    "icon": "restaurant"
+    "displayName": "Equipment",
+    "icon": "bell"
   },
   "options": {},
   "attributes": {

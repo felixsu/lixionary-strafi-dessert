@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_recipe_steps",
+  "info": {
+    "displayName": "Step",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "equipments": {
+      "type": "component",
+      "component": "recipe.equipment",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

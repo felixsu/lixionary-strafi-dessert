@@ -61,24 +61,26 @@
         }
       }
     },
-    "igrendients": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.igrendient",
-      "repeatable": true
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "recipes"
     },
-    "tools": {
+    "display_windows": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::display-window.display-window",
+      "mappedBy": "recipe"
+    },
+    "amounts": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "shared.tool",
+      "component": "recipe.amount",
       "repeatable": true
     },
     "steps": {
@@ -88,14 +90,18 @@
           "localized": true
         }
       },
-      "component": "shared.step",
+      "component": "recipe.step",
       "repeatable": true
     },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "mappedBy": "recipes"
+    "ingredients": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "recipe.ingrendient",
+      "repeatable": true
     }
   }
 }

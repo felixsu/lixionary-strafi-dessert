@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_shared_amounts",
+  "collectionName": "components_recipe_amounts",
   "info": {
-    "displayName": "Recipe Amount",
-    "icon": "sun"
+    "displayName": "Amount"
   },
   "options": {},
   "attributes": {

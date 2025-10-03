@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_general_physical_informations",
+  "info": {
+    "displayName": "Physical Information",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "ratio": {
+      "type": "decimal"
+    },
+    "weight": {
+      "type": "integer"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "length": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "diameter": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

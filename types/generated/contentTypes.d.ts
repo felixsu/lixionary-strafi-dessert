@@ -559,6 +559,50 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDisplayWindowDisplayWindow
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'display_windows';
+  info: {
+    displayName: 'Display Window';
+    pluralName: 'display-windows';
+    singularName: 'display-window';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    display_alternatives: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    display_main: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    is_available: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::display-window.display-window'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    physical_informations: Schema.Attribute.Component<
+      'general.physical-information',
+      true
+    >;
+    prices: Schema.Attribute.Component<'general.price', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    recipe: Schema.Attribute.Relation<'manyToOne', 'api::recipe.recipe'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -616,6 +660,12 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    amounts: Schema.Attribute.Component<'recipe.amount', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::category.category'
@@ -629,7 +679,11 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    igrendients: Schema.Attribute.Component<'shared.igrendient', true> &
+    display_windows: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::display-window.display-window'
+    >;
+    ingredients: Schema.Attribute.Component<'recipe.ingrendient', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -652,13 +706,7 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    steps: Schema.Attribute.Component<'shared.step', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    tools: Schema.Attribute.Component<'shared.tool', true> &
+    steps: Schema.Attribute.Component<'recipe.step', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1184,6 +1232,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::display-window.display-window': ApiDisplayWindowDisplayWindow;
       'api::global.global': ApiGlobalGlobal;
       'api::recipe.recipe': ApiRecipeRecipe;
       'plugin::content-releases.release': PluginContentReleasesRelease;

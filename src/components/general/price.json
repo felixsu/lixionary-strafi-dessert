@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_general_prices",
+  "info": {
+    "displayName": "Price",
+    "icon": "priceTag"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_shared_igrendients",
+  "collectionName": "components_recipe_ingrendients",
   "info": {
-    "displayName": "Recipe Ingrendient",
-    "icon": "bulletList"
+    "displayName": "Ingrendient",
+    "icon": "chartCircle"
   },
   "options": {},
   "attributes": {
@@ -18,9 +18,9 @@
         "pcs"
       ]
     },
-    "Amount": {
+    "amount": {
       "type": "component",
-      "component": "shared.amount",
+      "component": "recipe.amount",
       "repeatable": true
     }
   },

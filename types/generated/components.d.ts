@@ -1,10 +1,38 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedAmount extends Struct.ComponentSchema {
-  collectionName: 'components_shared_amounts';
+export interface GeneralPhysicalInformation extends Struct.ComponentSchema {
+  collectionName: 'components_general_physical_informations';
   info: {
-    displayName: 'Recipe Amount';
-    icon: 'sun';
+    displayName: 'Physical Information';
+    icon: 'clock';
+  };
+  attributes: {
+    diameter: Schema.Attribute.Integer;
+    height: Schema.Attribute.Integer;
+    length: Schema.Attribute.Integer;
+    name: Schema.Attribute.String;
+    ratio: Schema.Attribute.Decimal;
+    weight: Schema.Attribute.Integer;
+    width: Schema.Attribute.Integer;
+  };
+}
+
+export interface GeneralPrice extends Struct.ComponentSchema {
+  collectionName: 'components_general_prices';
+  info: {
+    displayName: 'Price';
+    icon: 'priceTag';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    value: Schema.Attribute.Integer;
+  };
+}
+
+export interface RecipeAmount extends Struct.ComponentSchema {
+  collectionName: 'components_recipe_amounts';
+  info: {
+    displayName: 'Amount';
   };
   attributes: {
     level: Schema.Attribute.Enumeration<['less', 'normal', 'more']>;
@@ -12,16 +40,42 @@ export interface SharedAmount extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedIgrendient extends Struct.ComponentSchema {
-  collectionName: 'components_shared_igrendients';
+export interface RecipeEquipment extends Struct.ComponentSchema {
+  collectionName: 'components_recipe_equipment';
   info: {
-    displayName: 'Recipe Ingrendient';
-    icon: 'bulletList';
+    displayName: 'Equipment';
+    icon: 'bell';
   };
   attributes: {
-    Amount: Schema.Attribute.Component<'shared.amount', true>;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface RecipeIngrendient extends Struct.ComponentSchema {
+  collectionName: 'components_recipe_ingrendients';
+  info: {
+    displayName: 'Ingrendient';
+    icon: 'chartCircle';
+  };
+  attributes: {
+    amount: Schema.Attribute.Component<'recipe.amount', true>;
     name: Schema.Attribute.String;
     unit: Schema.Attribute.Enumeration<['cm', 'gram', 'ml', 'pcs']>;
+  };
+}
+
+export interface RecipeStep extends Struct.ComponentSchema {
+  collectionName: 'components_recipe_steps';
+  info: {
+    displayName: 'Step';
+    icon: 'filter';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    duration: Schema.Attribute.Integer;
+    equipments: Schema.Attribute.Component<'recipe.equipment', true>;
+    stage: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -75,42 +129,19 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedStep extends Struct.ComponentSchema {
-  collectionName: 'components_shared_steps';
-  info: {
-    displayName: 'Recipe Step';
-    icon: 'bulletList';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    duration: Schema.Attribute.Integer;
-    stage: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface SharedTool extends Struct.ComponentSchema {
-  collectionName: 'components_shared_tools';
-  info: {
-    displayName: 'Recipe Tool';
-    icon: 'restaurant';
-  };
-  attributes: {
-    name: Schema.Attribute.String;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'shared.amount': SharedAmount;
-      'shared.igrendient': SharedIgrendient;
+      'general.physical-information': GeneralPhysicalInformation;
+      'general.price': GeneralPrice;
+      'recipe.amount': RecipeAmount;
+      'recipe.equipment': RecipeEquipment;
+      'recipe.ingrendient': RecipeIngrendient;
+      'recipe.step': RecipeStep;
       'shared.media': SharedMedia;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
-      'shared.step': SharedStep;
-      'shared.tool': SharedTool;
     }
   }
 }
