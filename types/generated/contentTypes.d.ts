@@ -576,14 +576,14 @@ export interface ApiDisplayWindowDisplayWindow
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText;
-    display_alternatives: Schema.Attribute.Media<
+    displayAlternatives: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    display_main: Schema.Attribute.Media<
+    displayMain: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    is_available: Schema.Attribute.Boolean;
+    isAvailable: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -591,7 +591,7 @@ export interface ApiDisplayWindowDisplayWindow
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
-    physical_informations: Schema.Attribute.Component<
+    physicalInformations: Schema.Attribute.Component<
       'general.physical-information',
       true
     >;
@@ -652,7 +652,7 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    alternative_display: Schema.Attribute.Media<
+    alternativeDisplay: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     > &
@@ -675,11 +675,11 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    display_windows: Schema.Attribute.Relation<
+    displayWindows: Schema.Attribute.Relation<
       'oneToMany',
       'api::display-window.display-window'
     >;
-    ingredient_groups: Schema.Attribute.Component<
+    ingredientGroups: Schema.Attribute.Component<
       'recipe.ingredient-group',
       true
     > &
@@ -690,7 +690,7 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::recipe.recipe'>;
-    main_display: Schema.Attribute.Media<
+    mainDisplay: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -705,7 +705,7 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    serving_size: Schema.Attribute.Component<'recipe.serving-size', false> &
+    servingSize: Schema.Attribute.Component<'recipe.serving-size', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

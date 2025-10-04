@@ -23,7 +23,7 @@
         }
       }
     },
-    "main_display": {
+    "mainDisplay": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -38,7 +38,7 @@
         "audios"
       ]
     },
-    "alternative_display": {
+    "alternativeDisplay": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -67,7 +67,7 @@
       "target": "api::category.category",
       "mappedBy": "recipes"
     },
-    "display_windows": {
+    "displayWindows": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::display-window.display-window",
@@ -83,7 +83,7 @@
       "component": "recipe.step",
       "repeatable": true
     },
-    "ingredient_groups": {
+    "ingredientGroups": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
@@ -99,7 +99,7 @@
       "target": "api::author.author",
       "inversedBy": "recipes"
     },
-    "serving_size": {
+    "servingSize": {
       "type": "component",
       "pluginOptions": {
         "i18n": {

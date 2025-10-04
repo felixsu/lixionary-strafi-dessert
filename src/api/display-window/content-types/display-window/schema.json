@@ -17,7 +17,7 @@
     "description": {
       "type": "richtext"
     },
-    "display_main": {
+    "displayMain": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -27,7 +27,7 @@
         "audios"
       ]
     },
-    "display_alternatives": {
+    "displayAlternatives": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [
@@ -42,19 +42,19 @@
       "component": "general.price",
       "repeatable": true
     },
-    "physical_informations": {
+    "physicalInformations": {
       "type": "component",
       "component": "general.physical-information",
       "repeatable": true
     },
-    "is_available": {
+    "isAvailable": {
       "type": "boolean"
     },
     "recipe": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::recipe.recipe",
-      "inversedBy": "display_windows"
+      "inversedBy": "displayWindows"
     }
   }
 }
