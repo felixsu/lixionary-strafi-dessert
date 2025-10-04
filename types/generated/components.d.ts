@@ -51,16 +51,42 @@ export interface RecipeEquipment extends Struct.ComponentSchema {
   };
 }
 
+export interface RecipeIngredientGroup extends Struct.ComponentSchema {
+  collectionName: 'components_recipe_ingredient_groups';
+  info: {
+    displayName: 'Ingredient Group';
+    icon: 'bulletList';
+  };
+  attributes: {
+    group_name: Schema.Attribute.String;
+    ingredients: Schema.Attribute.Component<'recipe.ingrendient', true>;
+  };
+}
+
 export interface RecipeIngrendient extends Struct.ComponentSchema {
   collectionName: 'components_recipe_ingrendients';
   info: {
-    displayName: 'Ingrendient';
+    displayName: 'Ingredient';
     icon: 'chartCircle';
   };
   attributes: {
     amount: Schema.Attribute.Component<'recipe.amount', true>;
     name: Schema.Attribute.String;
-    unit: Schema.Attribute.Enumeration<['cm', 'gram', 'ml', 'pcs']>;
+    unit: Schema.Attribute.Enumeration<
+      ['cm', 'gram', 'ml', 'pcs', 'tsp', 'tbsp']
+    >;
+  };
+}
+
+export interface RecipeServingSize extends Struct.ComponentSchema {
+  collectionName: 'components_recipe_serving_sizes';
+  info: {
+    displayName: 'Serving Size';
+    icon: 'filter';
+  };
+  attributes: {
+    unit: Schema.Attribute.Enumeration<['pcs', 'cup']>;
+    value: Schema.Attribute.Integer;
   };
 }
 
@@ -136,7 +162,9 @@ declare module '@strapi/strapi' {
       'general.price': GeneralPrice;
       'recipe.amount': RecipeAmount;
       'recipe.equipment': RecipeEquipment;
+      'recipe.ingredient-group': RecipeIngredientGroup;
       'recipe.ingrendient': RecipeIngrendient;
+      'recipe.serving-size': RecipeServingSize;
       'recipe.step': RecipeStep;
       'shared.media': SharedMedia;
       'shared.rich-text': SharedRichText;

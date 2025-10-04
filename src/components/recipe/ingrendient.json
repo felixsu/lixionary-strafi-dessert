@@ -1,7 +1,7 @@
 {
   "collectionName": "components_recipe_ingrendients",
   "info": {
-    "displayName": "Ingrendient",
+    "displayName": "Ingredient",
     "icon": "chartCircle"
   },
   "options": {},
@@ -15,7 +15,9 @@
         "cm",
         "gram",
         "ml",
-        "pcs"
+        "pcs",
+        "tsp",
+        "tbsp"
       ]
     },
     "amount": {

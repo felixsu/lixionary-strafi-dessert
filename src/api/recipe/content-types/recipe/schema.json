@@ -73,16 +73,6 @@
       "target": "api::display-window.display-window",
       "mappedBy": "recipe"
     },
-    "amounts": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "recipe.amount",
-      "repeatable": true
-    },
     "steps": {
       "type": "component",
       "pluginOptions": {
@@ -101,6 +91,32 @@
         }
       },
       "component": "recipe.ingrendient",
+      "repeatable": true
+    },
+    "ingredient_groups": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "recipe.ingredient-group",
+      "repeatable": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "recipes"
+    },
+    "serving_size": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "recipe.serving-size",
       "repeatable": true
     }
   }

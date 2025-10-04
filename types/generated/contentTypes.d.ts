@@ -521,6 +521,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    recipes: Schema.Attribute.Relation<'oneToMany', 'api::recipe.recipe'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -660,12 +661,7 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    amounts: Schema.Attribute.Component<'recipe.amount', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::category.category'
@@ -683,6 +679,15 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::display-window.display-window'
     >;
+    ingredient_groups: Schema.Attribute.Component<
+      'recipe.ingredient-group',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     ingredients: Schema.Attribute.Component<'recipe.ingrendient', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -706,6 +711,12 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    serving_size: Schema.Attribute.Component<'recipe.serving-size', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     steps: Schema.Attribute.Component<'recipe.step', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

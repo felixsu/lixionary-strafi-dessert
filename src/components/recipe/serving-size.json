@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_recipe_serving_sizes",
+  "info": {
+    "displayName": "Serving Size",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "integer"
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "pcs",
+        "cup"
+      ]
+    }
+  },
+  "config": {}
+}

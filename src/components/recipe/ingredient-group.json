@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_recipe_ingredient_groups",
+  "info": {
+    "displayName": "Ingredient Group",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "group_name": {
+      "type": "string"
+    },
+    "ingredients": {
+      "type": "component",
+      "component": "recipe.ingrendient",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
