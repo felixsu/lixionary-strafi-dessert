@@ -58,7 +58,7 @@ export interface RecipeIngredientGroup extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    group_name: Schema.Attribute.String;
+    groupName: Schema.Attribute.String;
     ingredients: Schema.Attribute.Component<'recipe.ingrendient', true>;
   };
 }

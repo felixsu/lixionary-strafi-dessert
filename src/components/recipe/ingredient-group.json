@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "group_name": {
+    "groupName": {
       "type": "string"
     },
     "ingredients": {
