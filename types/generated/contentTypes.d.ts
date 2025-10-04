@@ -688,12 +688,6 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    ingredients: Schema.Attribute.Component<'recipe.ingrendient', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::recipe.recipe'>;
     main_display: Schema.Attribute.Media<
@@ -711,7 +705,7 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    serving_size: Schema.Attribute.Component<'recipe.serving-size', true> &
+    serving_size: Schema.Attribute.Component<'recipe.serving-size', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

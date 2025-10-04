@@ -83,16 +83,6 @@
       "component": "recipe.step",
       "repeatable": true
     },
-    "ingredients": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "recipe.ingrendient",
-      "repeatable": true
-    },
     "ingredient_groups": {
       "type": "component",
       "pluginOptions": {
@@ -117,7 +107,7 @@
         }
       },
       "component": "recipe.serving-size",
-      "repeatable": true
+      "repeatable": false
     }
   }
 }
