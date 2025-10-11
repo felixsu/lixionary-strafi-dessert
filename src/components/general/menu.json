@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_general_menus",
+  "info": {
+    "displayName": "Menu",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

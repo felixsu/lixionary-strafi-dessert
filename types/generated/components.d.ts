@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface GeneralMenu extends Struct.ComponentSchema {
+  collectionName: 'components_general_menus';
+  info: {
+    displayName: 'Menu';
+    icon: 'bulletList';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    path: Schema.Attribute.String;
+  };
+}
+
 export interface GeneralPhysicalInformation extends Struct.ComponentSchema {
   collectionName: 'components_general_physical_informations';
   info: {
@@ -158,6 +170,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'general.menu': GeneralMenu;
       'general.physical-information': GeneralPhysicalInformation;
       'general.price': GeneralPrice;
       'recipe.amount': RecipeAmount;
