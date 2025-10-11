@@ -73,7 +73,7 @@ export interface RecipeIngrendient extends Struct.ComponentSchema {
     amount: Schema.Attribute.Component<'recipe.amount', true>;
     name: Schema.Attribute.String;
     unit: Schema.Attribute.Enumeration<
-      ['cm', 'gram', 'ml', 'pcs', 'tsp', 'tbsp']
+      ['cm', 'gram', 'ml', 'pcs', 'tsp', 'tbsp', 'none']
     >;
   };
 }
@@ -85,7 +85,7 @@ export interface RecipeServingSize extends Struct.ComponentSchema {
     icon: 'filter';
   };
   attributes: {
-    unit: Schema.Attribute.Enumeration<['pcs', 'cup']>;
+    unit: Schema.Attribute.Enumeration<['pcs', 'cup', 'cm', 'gram', 'ml']>;
     value: Schema.Attribute.Integer;
   };
 }

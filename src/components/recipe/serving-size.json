@@ -13,7 +13,10 @@
       "type": "enumeration",
       "enum": [
         "pcs",
-        "cup"
+        "cup",
+        "cm",
+        "gram",
+        "ml"
       ]
     }
   },
